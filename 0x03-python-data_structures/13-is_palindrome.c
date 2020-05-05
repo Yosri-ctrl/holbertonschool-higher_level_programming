@@ -40,7 +40,11 @@ int is_palindrome(listint_t **head)
             second = second->next;
         }
         else
+        {
+            free_listint(new);
             return (0);
+        }
     }
+    free_listint(new);
     return (1);
 }
