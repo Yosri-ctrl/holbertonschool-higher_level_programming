@@ -9,10 +9,11 @@ int is_palindrome(listint_t **head)
     listint_t *node, *new, *first, *second;
 
     node = *head;
+    if (node->next == NULL)
+        return (1);
     new = NULL;
     second = *head;
     first = second->next;
-
     while (first->next)
     {
         first = first->next;
@@ -31,19 +32,16 @@ int is_palindrome(listint_t **head)
     }
     add_nodeint_end(&new, first->n);
     add_nodeint_end(&new, second->n);
-
+    second = new;
     while (node->next)
     {
-        if (node->n == second->n)
-        {
-            node = node->next;
-            second = second->next;
-        }
-        else
+        if (node->n != second->n)
         {
             free_listint(new);
             return (0);
         }
+        node = node->next;
+        second = second->next;
     }
     free_listint(new);
     return (1);
