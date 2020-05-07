@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
     new = []
-    for i,j in a_dictionary.items():
+    for i, j in a_dictionary.items():
         if value == j:
             new.append(i)
     for i in new:
