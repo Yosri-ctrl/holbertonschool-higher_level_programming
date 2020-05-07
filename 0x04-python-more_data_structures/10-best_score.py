@@ -5,7 +5,10 @@ def best_score(a_dictionary):
     if a_dictionary is None:
         return None
     for i, j in a_dictionary.items():
-        if max < j:
+        if max <= j:
             max = j
             maxi = i
+        if j is None:
+            max = None
+            maxi = None
     return maxi
