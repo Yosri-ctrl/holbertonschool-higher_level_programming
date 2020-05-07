@@ -2,4 +2,4 @@
 def print_sorted_dictionary(a_dictionary):
     new = sorted(a_dictionary.items())
     for i, j in new:
-        print(i, ":", j)
+        print("{}: {}".format(i, j))
