@@ -6,9 +6,8 @@ class Square:
     """Define a square by it's size"""
     def __init__(self, size=0):
         """initialise the size value"""
+        self.__size = size
         if size < 0:
             raise ValueError("size must be >= 0")
-        elif not isinstance(size, int):
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        else:
-            self.__size = size
