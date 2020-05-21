@@ -52,5 +52,9 @@ class Square:
             if self.__position[0] > 0:
                 square += " " * self.__position[0]
             square += "#" * self.__size
-        square += "\n"
+            if i < self.__size - 1:
+                square += "\n"
         return square
+
+    def __repr__(self):
+        return (self.my_print())
