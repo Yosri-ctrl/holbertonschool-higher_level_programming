@@ -7,8 +7,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """initialise the size of the square"""
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -36,7 +36,7 @@ class Square:
         if value[0] < 0 or value[1] < 0:
             raise TypeError(mess)
         self.__position = value
-        
+
     def area(self):
         return self.__size * self.__size
 
