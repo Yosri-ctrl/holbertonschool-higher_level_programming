@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""
+define BaseGeomtry
+"""
+
+
 class BaseGeometry:
+    """
+    define an empty method(area)
+    test if the value and name are correct
+    """
     def area(self):
         raise Exception("area() is not implemented")
 
