@@ -4,7 +4,7 @@ Read n lines from a file
 """
 
 
-def write_file(filename="", text=""):
+def read_lines(filename="", nb_lines=0):
     """
     read n lines in a text file
     """
