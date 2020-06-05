@@ -9,11 +9,11 @@ def lazy_matrix_mul(m_a, m_b):
     """
     multiple two matrix withe different size
     exemple:
-        A = [[1, 2], [2, 3]] * [[1, 2], [2, 3]]
-        A = [[7, 10], [15, 22]]
+    A = [[1, 2], [2, 3]] * [[1, 2], [2, 3]]
+    A = [[7, 10], [15, 22]]
 
-        B = [[1, 1]] * [[1, 1]]
-        B = [1, 1]
+    B = [[1, 1]] * [[1, 1]]
+    B = [1, 1]
     """
     if type(m_a) != list:
         raise TypeError("m_a must be a list")
