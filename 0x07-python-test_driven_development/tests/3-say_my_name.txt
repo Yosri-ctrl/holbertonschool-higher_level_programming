@@ -1,0 +1,13 @@
+chack if say_my_name works proproly
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+>>> say_my_name("", "what")
+My name is  what
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob")
+My name is Bob 
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
