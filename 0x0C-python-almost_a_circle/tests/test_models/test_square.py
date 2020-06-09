@@ -14,6 +14,7 @@ class TestSquareClass(u.TestCase):
     testing the class Square
     """
     def test_square(self):
+        """test square"""
         s1 = Square(5, id=1)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(s1)
@@ -21,6 +22,7 @@ class TestSquareClass(u.TestCase):
                              "[Square] (1) 0/0 - 5\n")
 
     def test_square_x(self):
+        """test x"""
         s1 = Square(5, 1, id=1)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(s1)
@@ -28,6 +30,7 @@ class TestSquareClass(u.TestCase):
                              "[Square] (1) 1/0 - 5\n")
 
     def test_square_y(self):
+        """test y"""
         s1 = Square(5, 1, 2, id=1)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(s1)
@@ -35,6 +38,7 @@ class TestSquareClass(u.TestCase):
                              "[Square] (1) 1/2 - 5\n")
 
     def test_square_area(self):
+        """test area"""
         s1 = Square(5, id=1)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(s1.area())
@@ -42,6 +46,7 @@ class TestSquareClass(u.TestCase):
                              "25\n")
 
     def test_square_display(self):
+        """test dispaly"""
         s1 = Square(2, id=1)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             s1.display()
@@ -49,14 +54,17 @@ class TestSquareClass(u.TestCase):
                              "##\n##\n")
 
     def test_size_type(self):
+        """test size type"""
         with self.assertRaises(TypeError):
             Square("2")
 
     def test_size_value(self):
+        """test size value"""
         with self.assertRaises(ValueError):
             Square(-1)
 
     def test_update_square(self):
+        """test update"""
         s1 = Square(10, 10, 10, 10)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             s1.update(4, 2, 2, 1,
@@ -66,6 +74,7 @@ class TestSquareClass(u.TestCase):
                              "[Square] (4) 2/1 - 2\n")
 
     def test_update_square_kwargs(self):
+        """test update with kwargs"""
         s1 = Square(10, 10, 10, 10)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             s1.update(x=1, y=3, size=4, id=8)
@@ -74,6 +83,7 @@ class TestSquareClass(u.TestCase):
                              "[Square] (8) 1/3 - 4\n")
 
     def test_update_square_mix(self):
+        """test update"""
         s1 = Square(10, 10, 10, 10)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             s1.update(4, y=3, size=4, id=8)
@@ -82,6 +92,7 @@ class TestSquareClass(u.TestCase):
                              "[Square] (4) 10/3 - 4\n")
 
     def test_dictionary(self):
+        """test dict"""
         s1 = Square(10, 10, 10, 10)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             a1 = s1.to_dictionary()
