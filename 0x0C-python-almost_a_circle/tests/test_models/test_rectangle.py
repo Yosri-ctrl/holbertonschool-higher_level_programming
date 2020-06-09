@@ -231,6 +231,5 @@ class TestRectangleClass(u.TestCase):
             a1 = r1.to_dictionary()
             print(a1)
             self.assertEqual(fake_out.getvalue(),
-                             "{'x': 10, 'y': 10, 'id': 10,\
-                                  'height': 10, 'width': 10}\n")
+                             "{'x': 10, 'y': 10, 'id': 10, 'height': 10, 'width': 10}\n")
         self.assertEqual(type(a1), dict)
