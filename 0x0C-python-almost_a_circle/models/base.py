@@ -15,6 +15,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """initialise everything"""
         if id is not None:
             self.id = id
         else:
@@ -23,6 +24,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """JSON to str"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -30,6 +32,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """save_to_file"""
         list = []
         with open(cls.__name__ + ".json", "w") as f:
             if list_objs is None:
@@ -40,6 +43,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """from_json_string"""
         if json_string is None or len(json_string) == 0:
             return "[]"
         else:
@@ -47,16 +51,18 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """create"""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-            dummy.update(**dictionary)
+            rec = cls(1, 1)
+            rec.update(**dictionary)
         if cls.__name__ == "Square":
-            dummy = cls(1)
-            dummy.update(**dictionary)
-        return dummy
+            rec = cls(1)
+            rec.update(**dictionary)
+        return rec
 
     @classmethod
     def load_from_file(cls):
+        """load_from_file"""
         if os.path.exists("{}.json".format(cls.__name__)) is False:
             return []
         with open(cls.__name__ + ".json", mode="r") as MyFile:
