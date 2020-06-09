@@ -15,55 +15,66 @@ class TestRectangleClass(u.TestCase):
     testing the class Rectangle
     """
     def test_id(self):
+        """test id """
         r1 = Rectangle(10, 2)
         a1 = r1.id
         self.assertEqual(a1, r1.id)
 
     def test_id_second(self):
+        """test id """
         r2 = Rectangle(1, 1, 0, 0, 20)
         a2 = r2.id
         self.assertEqual(a2, 20)
 
     def test_id_neg(self):
+        """test id """
         r3 = Rectangle(10, 2, 5, 3, -8)
         a3 = r3.id
         self.assertEqual(a3, -8)
 
     def test_width_neg(self):
+        """test width"""
         with self.assertRaises(ValueError):
             Rectangle(-1, 2)
 
     def test_width_type(self):
+        """test width"""
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
         with self.assertRaises(TypeError):
             Rectangle([1], 2)
 
     def test_height_neg(self):
+        """test height"""
         with self.assertRaises(ValueError):
             Rectangle(1, -2)
 
     def test_height_type(self):
+        """test height"""
         with self.assertRaises(TypeError):
             Rectangle(1, "2")
         with self.assertRaises(TypeError):
             Rectangle(1, [2])
 
     def test_x_neg(self):
+        """test x"""
         with self.assertRaises(ValueError):
             Rectangle(1, 2, -1)
 
     def test_x_type(self):
+        """test x"""
         with self.assertRaises(TypeError):
             Rectangle(1, 2, "1")
         with self.assertRaises(TypeError):
             Rectangle(1, 2, {1})
 
     def test_y_neg(self):
+        """test y"""
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 1, -2)
 
     def test_y_type(self):
+        """test y"""
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 1, "2")
         with self.assertRaises(TypeError):
