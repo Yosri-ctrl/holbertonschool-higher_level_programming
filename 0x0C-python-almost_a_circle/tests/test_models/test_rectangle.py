@@ -238,9 +238,9 @@ class TestRectangleClass(u.TestCase):
 
     def test_dictionary(self):
         r1 = Rectangle(10, 10, 10, 10, 10)
+        c = "{'x': 10, 'y': 10, 'id': 10, 'height': 10, 'width': 10}\n"
         with patch('sys.stdout', new=StringIO()) as fake_out:
             a1 = r1.to_dictionary()
             print(a1)
-            self.assertEqual(fake_out.getvalue(),
-                             "{'x': 10, 'y': 10, 'id': 10, 'height': 10, 'width': 10}\n")
+            self.assertEqual(fake_out.getvalue(), c)
         self.assertEqual(type(a1), dict)
