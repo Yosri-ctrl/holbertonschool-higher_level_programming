@@ -3,6 +3,7 @@
 Creating the class Base
 """
 import json as j
+import os
 
 
 class Base:
@@ -43,3 +44,13 @@ class Base:
             return "[]"
         else:
             return j.loads(json_string)
+
+    
+
+    @classmethod
+    def load_from_file(cls):
+        if os.path.exists("{}.json".format(cls.__name__)) is False:
+            return []
+        with open(cls.__name__ + ".json", mode="r") as MyFile:
+            my_list = cls.from_json_string(MyFile.read())
+            return [cls.create(**items) for items in my_list]
