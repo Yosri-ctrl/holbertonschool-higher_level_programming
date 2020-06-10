@@ -66,5 +66,5 @@ class Base:
         if os.path.exists("{}.json".format(cls.__name__)) is False:
             return []
         with open(cls.__name__ + ".json", mode="r") as MyFile:
-            my_list = cls.from_json_string(MyFile.read())
-            return [cls.create(**items) for items in my_list]
+            list = cls.from_json_string(MyFile.read())            
+            return [cls.create(**node) for node in list]
