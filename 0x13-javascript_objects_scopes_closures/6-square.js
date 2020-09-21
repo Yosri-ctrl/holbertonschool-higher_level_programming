@@ -7,7 +7,7 @@ module.exports = class Square extends Rectangle {
     }
 
     charPrint(c) {
-        c === undefined ? c = 'X' : c = 'C';
+        if (c === undefined) { c = 'X' }
         this.print(c);
     }
 
