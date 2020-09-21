@@ -12,7 +12,7 @@ module.exports = class Rectangle {
         let display = '';
         for (let i = 0; i < this.height; i++) {
             for (let j = 0; j < this.width; j++) {
-                display += 'x';
+                display += 'X';
             }
             if (i < this.height - 1) { display += '\n'; }
         }
